@@ -1,0 +1,37 @@
+name: Rules
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a multi-line script
+        run: |
+          rm -fr *
+          wget https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat
+          wget https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat
+
+
+          echo -e "|    Size   |     DL  | sha512sum |\n|  ---  |  ---  |  ---  |" > README.md
+          shopt -s extglob
+          for file in $(ls !(*.md)); do
+            echo "| $(expr $(wc -c < $file )  / 1000000  | numfmt --to=iec-i --suffix=MB --format="%f") | [$file](https://cdn.jsdelivr.net/gh/${{ github.repository }}@main/$file) | $(sha512sum  $file | cut -d " " -f1 ) |" >> README.md
+          done
+
+          git init
+          git add .
+          git config user.name "googleians"
+          git config user.email "77716481+googleians@users.noreply.github.com"
+          git commit -m "binary of v2ray-core for windows 10 Pro amd64 "
+          git tag -a "$(date +"%d-%m-%Y")" -m "$(date +"%d-%m-%Y")"
+          git remote add release "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -u --follow-tags release main -f
+
+
+
