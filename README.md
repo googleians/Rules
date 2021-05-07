@@ -1,4 +1,4 @@
 |    Size   |     DL  | sha512sum |
 |  ---  |  ---  |  ---  |
-| 5MB | [geoip.dat](https://cdn.jsdelivr.net/gh/googleians/Rules@main/geoip.dat) | 50f6fb81b4ceba15ab10047aaad243c96832495842f9df7ee7a07a811de1638bc101b37880f8c8c2430438c6d93d839f9b1622f89c8d60152b7787e9f29f6217 |
-| 4MB | [geosite.dat](https://cdn.jsdelivr.net/gh/googleians/Rules@main/geosite.dat) | 448e80b8bdce16bb61ee3e7ff40c6823ac9dc8a95a42269aca080255b3d80ba205404fcd3a09081c18b47e3751db61b7bbc0e124ea533151d43f3550eb1fcdda |
+| 5MB | [geoip.dat](https://cdn.jsdelivr.net/gh/googleians/Rules@main/geoip.dat) | 50792bf2eca53aab437e859332b58569c4f05fd0f16896c8bd49acdb94d8878afbcdb25af00cefa3629adc3926f6c80e122303acc98bbea0a559773ed83c1e4e |
+| 4MB | [geosite.dat](https://cdn.jsdelivr.net/gh/googleians/Rules@main/geosite.dat) | fae2a73389ccebe9596d8aafec58853d1953c82a160d33229681154eebe8adc72f528a60b6c970891b2e50524fc4ca27a15b4f516bad0fc6f9cc258e26f8b9cd |
